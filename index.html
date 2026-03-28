@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="description"
+            content="KhanDevs builds high-quality software solutions for modern businesses."
+          />
+          <meta name="keywords" content="KhanDevs, software development, ProQuiz Simulator, enterprise software" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="KhanDevs | High-Quality Software Solutions" />
+          <meta property="og:description" content="KhanDevs builds high-quality software solutions for modern businesses." />
+          <meta property="og:url" content="index.html" />
+          <meta property="og:site_name" content="KhanDevs" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="KhanDevs | High-Quality Software Solutions" />
+          <meta name="twitter:description" content="KhanDevs builds high-quality software solutions for modern businesses." />
+          <title>KhanDevs | High-Quality Software Solutions</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="style.css" />
+        </head>
+        <body>
+          <div class="ambient" aria-hidden="true"></div>
+
+          <div class="greeting-strip">
+            <div class="greeting-inner container">
+              <p id="greeting-text" role="status" aria-live="polite">Good Day, welcome to KhanDevs.</p>
+              <button id="theme-toggle" class="ghost-btn" type="button" aria-pressed="false">
+                <span id="theme-toggle-label">Dark Mode</span>
+              </button>
+              <span id="theme-status" class="visually-hidden" role="status" aria-live="polite">
+                Currently in light mode.
+              </span>
+            </div>
+          </div>
+
+          <header class="site-header" id="home">
+            <div class="container nav-wrap">
+              <a class="brand" href="#home" aria-label="KhanDevs home">
+                <span class="brand-mark">KD</span>
+                <span class="brand-name">KhanDevs</span>
+              </a>
+
+              <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-nav-index"
+                data-nav-toggle
+              >
+                &#9776;
+              </button>
+
+              <nav id="primary-nav-index" aria-label="Primary navigation" data-nav-panel>
+                <p class="menu-heading">Main Menu</p>
+                <ul class="nav-list">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#trending">Trending</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="#company">Company</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+          <main>
+            <section class="hero section container" aria-labelledby="hero-title">
+              <div class="hero-content">
+                <p class="eyebrow">Accessible Software Solutions</p>
+                <h1 id="hero-title">We build inclusive software that solves real challenges.</h1>
+                <p class="hero-copy">
+                  KhanDevs designs practical software for learners and professionals,
+                  with accessibility, performance, and real-world usability at the core.
+                </p>
+                <a class="primary-cta" href="products.html">Explore Products</a>
+              </div>
+
+              <div class="hero-panel" aria-hidden="true">
+                <div class="hero-visual"></div>
+                <div class="hero-chips">
+                  <div class="hero-chip"><span class="chip-icon" aria-hidden="true">FD</span>Fast Delivery</div>
+                  <div class="hero-chip"><span class="chip-icon" aria-hidden="true">CA</span>Clean Architecture</div>
+                  <div class="hero-chip"><span class="chip-icon" aria-hidden="true">PR</span>Production Reliability</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section container" aria-labelledby="search-title">
+              <div class="section-heading compact-heading">
+                <p class="eyebrow">Find Software</p>
+                <h2 id="search-title">Search our software library</h2>
+              </div>
+              <form class="software-search" data-search-form>
+                <label class="visually-hidden" for="software-query-main">Software name</label>
+                <input
+                  id="software-query-main"
+                  name="software-query"
+                  type="search"
+                  placeholder="Search software (example: ProQuiz)"
+                />
+                <label class="visually-hidden" for="software-category-main">Category</label>
+                <select id="software-category-main" name="software-category">
+                  <option value="all">All Categories</option>
+                  <option value="windows">Windows</option>
+                  <option value="android">Android</option>
+                </select>
+                <button class="search-btn" type="submit">Search</button>
+              </form>
+              <p class="search-feedback" data-search-feedback aria-live="polite"></p>
+              <section class="search-results-container" data-search-results hidden aria-labelledby="search-results-title-main">
+                <h3 id="search-results-title-main">Search Results</h3>
+                <p class="results-count" data-results-count aria-live="polite"></p>
+                <div class="results-list" data-results-list></div>
+              </section>
+            </section>
+
+            <section class="section container" id="trending" aria-labelledby="trending-title">
+              <div class="section-heading">
+                <p class="eyebrow">Trending</p>
+                <h2 id="trending-title">Our Trending Softwares</h2>
+              </div>
+
+              <article class="software-card" aria-label="ProQuiz Simulator trending card">
+                <img class="software-logo" src="icon.png" alt="ProQuiz Simulator logo" />
+                <h3>
+                  <a href="proquiz-simulator.html">ProQuiz Simulator</a>
+                </h3>
+                <p>
+                  A complete digital testing academy for PPSC, FPSC, NTS, and other
+                  competitive exam aspirants, built for accessible learning.
+                </p>
+                <p>Developer: Khan Hassan Riaz</p>
+                <p>Designed for: Sighted and visually impaired learners</p>
+                <p>Available for: Windows and Android</p>
+                <a class="text-link" href="proquiz-simulator.html">Visit ProQuiz Simulator page</a>
+              </article>
+            </section>
+
+            <section class="section container" id="company" aria-labelledby="company-title">
+              <div class="section-heading">
+                <p class="eyebrow">Company</p>
+                <h2 id="company-title">History and journey</h2>
+              </div>
+
+              <div class="company-story" role="region" aria-label="Company history and founder vision">
+                <h3>About the Founder and Our Vision</h3>
+                <p>
+                  Hello and welcome to KhanDevs. I am Khan Hassan Riaz, a visually
+                  impaired software developer with a degree in Special Education. I
+                  built this platform to share the software and tools I develop,
+                  with a primary focus on making education and technology accessible
+                  for everyone.
+                </p>
+                <p>
+                  First, a massive thank you to everyone who has used and supported
+                  ProQuiz Simulator. Your trust and support are the main reasons
+                  this company and website exist today.
+                </p>
+                <p>
+                  ProQuiz Simulator was our very first project, and its journey
+                  started with a simple goal: generate mock tests and practice MCQs.
+                  As development continued, it evolved into a complete learning
+                  academy where candidates prepare for PPSC, FPSC, and other Public
+                  Service Commission exams in a fully accessible way.
+                </p>
+                <p>
+                  You can read complete details on the
+                  <a class="text-link" href="proquiz-simulator.html">ProQuiz Simulator page</a>.
+                  It is not just a basic app. It is a complete solution for modern
+                  learning challenges, and one of its greatest strengths is the
+                  quality of its educational content.
+                </p>
+                <p>
+                  The impact of ProQuiz Simulator became the driving force for our
+                  future products. We have always been passionate about software
+                  development, and modern AI has made it easier to bring practical
+                  ideas to life. We are continuously building new tools that solve
+                  real problems.
+                </p>
+
+                <h3>Our Other Tools</h3>
+                <h4>Pro Typing Assistant</h4>
+                <p>
+                  This software is specially designed for visually impaired users.
+                  It helps detect spelling mistakes, suggests corrections, and
+                  allows quick replacement with the right words. It also supports
+                  fast voice typing and custom dictionaries. Active development is
+                  ongoing, and more features are coming soon.
+                </p>
+
+                <h4>Pro Typing Master</h4>
+                <p>
+                  Typing speed and accuracy are crucial. This tool offers an
+                  accessible way to practice and test WPM (Words Per Minute). Users
+                  can practice specific word sets or paste custom paragraphs. One
+                  standout accessibility feature solves a common challenge for
+                  visually impaired typists: quickly identifying the next word.
+                  Built-in text-to-speech reads the next word instantly during
+                  practice.
+                </p>
+
+                <p>
+                  Along with these flagship tools, we always have a few smaller
+                  projects running in the background. If you have any suggestions,
+                  ideas, or a challenge that software could solve, please
+                  <a class="text-link" href="contact.html">contact us</a>.
+                </p>
+              </div>
+            </section>
+          </main>
+
+          <footer class="site-footer" id="contact">
+            <div class="container footer-wrap">
+              <div class="community-cta" aria-label="WhatsApp community invitation">
+                <h3>Join Our WhatsApp Community</h3>
+                <p>
+                  Join our community where we discuss new ideas, software updates,
+                  and practical solutions that can help learners and professionals.
+                </p>
+                <a
+                  class="community-btn"
+                  href="https://chat.whatsapp.com/LobEXdSGGk80veU21Qr4wk?mode=gi_t"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join
+                </a>
+              </div>
+              <div class="footer-links">
+                <a href="products.html">Our Products</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+              <p>&copy; 2026 KhanDevs. All rights reserved.</p>
+            </div>
+          </footer>
+
+          <script src="script.js" defer></script>
+        </body>
+      </html>
