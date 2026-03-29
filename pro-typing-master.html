@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ProTyping Master by Khan Hassan Riaz. Download the latest portable Windows release."
+    />
+    <meta
+      name="keywords"
+      content="ProTyping Master, typing tutor, accessible typing, Windows portable download, Khan Hassan Riaz"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ProTyping Master | KhanDevs" />
+    <meta
+      property="og:description"
+      content="Accessible typing tutor with instant text-to-speech feedback, practice mode, and detailed results."
+    />
+    <meta property="og:url" content="pro-typing-master.html" />
+    <meta property="og:site_name" content="KhanDevs" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ProTyping Master | KhanDevs" />
+    <meta
+      name="twitter:description"
+      content="Accessible typing tutor with instant text-to-speech feedback, practice mode, and detailed results."
+    />
+    <title>ProTyping Master | KhanDevs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <div class="greeting-strip">
+      <div class="greeting-inner container">
+        <p id="greeting-text" role="status" aria-live="polite">Good Day, welcome to ProTyping Master.</p>
+        <button id="theme-toggle" class="ghost-btn" type="button" aria-pressed="false">
+          <span id="theme-toggle-label">Dark Mode</span>
+        </button>
+        <span id="theme-status" class="visually-hidden" role="status" aria-live="polite">
+          Currently in light mode.
+        </span>
+      </div>
+    </div>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="KhanDevs home">
+          <span class="brand-mark">KD</span>
+          <span class="brand-name">KhanDevs</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-nav-protyping"
+          data-nav-toggle
+        >
+          &#9776;
+        </button>
+
+        <nav id="primary-nav-protyping" aria-label="Primary navigation" data-nav-panel>
+          <p class="menu-heading">Main Menu</p>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#trending">Trending</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html#company">Company</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="protyping-details" aria-labelledby="protyping-title">
+        <div class="section-heading">
+          <p class="eyebrow">Product Details</p>
+          <h1 id="protyping-title">ProTyping Master</h1>
+          <p class="product-mini-meta">
+            Developed by: Khan Hassan Riaz | Built for: Everyone with a focus on visually impaired users
+          </p>
+        </div>
+        <img class="software-logo software-logo-large" src="logo_ptm.png" alt="ProTyping Master logo" />
+
+        <div class="share-panel" aria-label="Share ProTyping Master page">
+          <button class="share-btn" type="button" data-share-page>
+            Share ProTyping Master
+          </button>
+          <p class="share-note">
+            Share this page with learners and typists who may benefit from accessible practice.
+          </p>
+          <p class="share-feedback" data-share-feedback aria-live="polite"></p>
+        </div>
+
+        <article class="detail-card" aria-label="Detailed ProTyping Master information">
+          <div class="detail-content">
+            <h2>ProTyping Master: The Accessible Typing Tutor</h2>
+            <p>
+              Typing fast and accurately is an essential skill today. I built ProTyping Master to make improving this skill as smooth and accessible as possible for everyone. It is a lightweight, audio-driven typing tutor that focuses on clear feedback and ease of use.
+            </p>
+
+            <h2>The Main Benefit:</h2>
+            <p>
+              While anyone can use ProTyping Master to boost their typing speed, I designed it with a specific focus on visually impaired users. A major challenge for visually impaired persons during typing practice is the need to hear the next word quickly and clearly without breaking their typing rhythm. Traditional screen readers can sometimes lag, talk over themselves, or mispronounce isolated words during rapid typing drills.
+            </p>
+            <p>
+              ProTyping Master solves this exact problem using deeply integrated Text-to-Speech technology. It instantly announces the next word the moment you finish typing the current one. If you get stuck, you can press a single key to hear the word again or have it spelled out letter by letter. This instant, reliable audio feedback keeps your hands on the keyboard and your focus entirely on improving your speed.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul class="feature-list">
+              <li>Microsoft Natural Voices: Enjoy clear, human-like voice feedback using Microsoft Edge native voices.</li>
+              <li>Multiple Modes: Choose the WPM test to check your speed under a time limit, or Practice Mode to learn at your own pace.</li>
+              <li>Custom Paragraphs: Want to practice specific text? Paste your own paragraphs into the software and type along.</li>
+              <li>Adaptive Learning: In Practice Mode, you can check a setting to repeat the words you type incorrectly, helping you master your weak spots.</li>
+              <li>Difficulty Levels: Choose from Basic, Medium, or Hard built-in word lists to match your current skill level.</li>
+              <li>Detailed Results: After a test, view your speed, time, and a detailed log of exactly which words you mistyped alongside what you actually typed.</li>
+              <li>Light and Dark Theme: Toggle between themes for comfortable viewing if you have low vision.</li>
+            </ul>
+
+            <h2>How to Use ProTyping Master</h2>
+            <p>
+              The interface is simple, straightforward, and completely screen-reader friendly. It is divided into three main areas.
+            </p>
+
+            <h3>Welcome Screen</h3>
+            <p>
+              This is your starting point where you customize your experience. You can turn audio feedback on or off, choose your preferred voice, and adjust the speech rate and pitch to your liking. Below that, you will find test settings to select your difficulty, shuffle words, or enable the Custom Paragraph mode. Once your settings are dialed in, simply click Start Word Per Minute Test or Start Practice.
+            </p>
+
+            <h3>Test Screen</h3>
+            <p>
+              This is the main typing area. As soon as you enter, the program reads the first word to you.
+            </p>
+            <ul class="feature-list">
+              <li>Type the word and press the Spacebar to submit it.</li>
+              <li>You will hear a positive sound for a correct word and an error sound for a mistake.</li>
+              <li>Press F2 at any time to hear the current word spoken again.</li>
+              <li>Press F3 to hear the spelling of the current word letter by letter.</li>
+              <li>If you are in WPM mode, a 60-second timer runs in the background. In Practice mode, you can take all the time you need.</li>
+            </ul>
+
+            <h3>Results Screen</h3>
+            <p>
+              When you finish a paragraph or the timer runs out, you get a complete summary. The software will read out your final Words Per Minute, total time taken, and the number of correct and incorrect words. From here, you can click View Incorrect Words to study your mistakes, copy your result to the clipboard to share your progress, or start a fresh test.
+            </p>
+
+            <h3>Practice Mode</h3>
+            <p>
+              In Practice Mode, there is no ticking clock to stress you out. It is the perfect environment to focus on your accuracy and rhythm at your own pace. A standout feature here is the Repeat Incorrect Words option. If you type a word wrong, the software will hold that word and ask you to type it again later, helping you actively correct and learn from your mistakes. You can also paste your own custom paragraphs, like study notes or articles, making your practice sessions highly relevant to your daily needs.
+            </p>
+
+            <h2>Portable and Ready to Use</h2>
+            <p>
+              One of the best things about ProTyping Master is that it is a completely portable, standalone application. There is no need to run complicated setup files or install anything on your system. Simply download the program, open it, and start typing. You can easily keep it on a USB flash drive and practice on any Windows computer you sit at.
+            </p>
+          </div>
+
+          <div class="downloads-stack">
+            <h2 class="downloads-title">Download ProTyping Master</h2>
+            <a
+              id="protyping-windows-download"
+              class="download-btn"
+              data-release-download="pro-typing-master"
+              data-platform="windows"
+              href="https://github.com/KhanHassanRiaz/ProTyping-Master/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download ProTyping Master for Windows
+            </a>
+            <p
+              class="release-status is-hidden"
+              data-release-status="pro-typing-master"
+              aria-live="polite"
+            ></p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Our Products</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <p>&copy; 2026 KhanDevs. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

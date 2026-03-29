@@ -1,9 +1,21 @@
-const RELEASES_API_URL =
-  "https://api.github.com/repos/KhanHassanRiaz/ProQuiz-Simulator-updater/releases/latest";
-const RELEASES_PAGE_URL =
-  "https://github.com/KhanHassanRiaz/ProQuiz-Simulator-updater/releases/latest";
 const PROQUIZ_DETAILS_PAGE = "proquiz-simulator.html";
+const PRO_TYPING_MASTER_DETAILS_PAGE = "pro-typing-master.html";
 const THEME_STORAGE_KEY = "khandevs-theme";
+const RELEASES_CONFIG = {
+  "proquiz-simulator": {
+    apiUrl:
+      "https://api.github.com/repos/KhanHassanRiaz/ProQuiz-Simulator-updater/releases/latest",
+    pageUrl:
+      "https://github.com/KhanHassanRiaz/ProQuiz-Simulator-updater/releases/latest",
+    fallbackName: "proquiz-latest",
+  },
+  "pro-typing-master": {
+    apiUrl:
+      "https://api.github.com/repos/KhanHassanRiaz/ProTyping-Master/releases/latest",
+    pageUrl: "https://github.com/KhanHassanRiaz/ProTyping-Master/releases/latest",
+    fallbackName: "protyping-master-latest",
+  },
+};
 const SOFTWARE_CATALOG = [
   {
     id: "proquiz-simulator",
@@ -65,9 +77,9 @@ const SOFTWARE_CATALOG = [
       "text to speech",
       "pro typing",
     ],
-    logo: "",
-    url: "",
-    status: "coming-soon",
+    logo: "logo_ptm.png",
+    url: PRO_TYPING_MASTER_DETAILS_PAGE,
+    status: "available",
     featured: false,
   },
 ];
@@ -231,16 +243,21 @@ function selectPreferredAsset(assets) {
   return null;
 }
 
-async function wireLatestProQuizRelease() {
+async function wireLatestRelease(productId) {
+  const releaseConfig = RELEASES_CONFIG[productId];
+  if (!releaseConfig) return;
+
   const windowsButtons = document.querySelectorAll(
-    "[data-proquiz-download='windows']"
+    `[data-release-download='${productId}'][data-platform='windows']`
   );
-  const statusEls = document.querySelectorAll("[data-release-status]");
+  const statusEls = document.querySelectorAll(
+    `[data-release-status='${productId}']`
+  );
 
   if (!windowsButtons.length && !statusEls.length) return;
 
   try {
-    const response = await fetch(RELEASES_API_URL, {
+    const response = await fetch(releaseConfig.apiUrl, {
       headers: {
         Accept: "application/vnd.github+json",
       },
@@ -256,7 +273,10 @@ async function wireLatestProQuizRelease() {
     if (preferredAsset && preferredAsset.browser_download_url) {
       windowsButtons.forEach((button) => {
         button.href = preferredAsset.browser_download_url;
-        button.setAttribute("download", preferredAsset.name || "proquiz-latest");
+        button.setAttribute(
+          "download",
+          preferredAsset.name || releaseConfig.fallbackName
+        );
         button.removeAttribute("aria-disabled");
       });
 
@@ -270,7 +290,7 @@ async function wireLatestProQuizRelease() {
     }
 
     windowsButtons.forEach((button) => {
-      button.href = RELEASES_PAGE_URL;
+      button.href = releaseConfig.pageUrl;
       button.removeAttribute("download");
     });
 
@@ -285,7 +305,7 @@ async function wireLatestProQuizRelease() {
     const isRateLimited = String(error.message).includes("403");
 
     windowsButtons.forEach((button) => {
-      button.href = RELEASES_PAGE_URL;
+      button.href = releaseConfig.pageUrl;
       button.removeAttribute("download");
     });
 
@@ -300,12 +320,22 @@ async function wireLatestProQuizRelease() {
   }
 }
 
+function wireLatestReleases() {
+  Object.keys(RELEASES_CONFIG).forEach((productId) => {
+    wireLatestRelease(productId);
+  });
+}
+
 function normalizeSearchText(value) {
   return String(value || "")
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeCompactSearchText(value) {
+  return normalizeSearchText(value).replace(/[\s-]+/g, "");
 }
 
 function escapeHtml(value) {
@@ -323,11 +353,23 @@ function calculateMatchScore(query, software) {
   const normalizedName = normalizeSearchText(software.name);
   const normalizedDesc = normalizeSearchText(software.description);
   const keywords = software.keywords.map((word) => normalizeSearchText(word));
+  const compactQuery = normalizeCompactSearchText(query);
+  const compactName = normalizeCompactSearchText(software.name);
+  const compactDesc = normalizeCompactSearchText(software.description);
+  const compactKeywords = software.keywords.map((word) =>
+    normalizeCompactSearchText(word)
+  );
 
   let score = 0;
   if (normalizedName === query) score += 120;
   if (normalizedName.startsWith(query)) score += 90;
   if (normalizedName.includes(query)) score += 60;
+
+  if (compactQuery) {
+    if (compactName === compactQuery) score += 110;
+    if (compactName.startsWith(compactQuery)) score += 80;
+    if (compactName.includes(compactQuery)) score += 50;
+  }
 
   keywords.forEach((keyword) => {
     if (keyword === query) score += 80;
@@ -335,7 +377,16 @@ function calculateMatchScore(query, software) {
     else if (keyword.includes(query)) score += 25;
   });
 
+  if (compactQuery) {
+    compactKeywords.forEach((keyword) => {
+      if (keyword === compactQuery) score += 70;
+      else if (keyword.startsWith(compactQuery)) score += 40;
+      else if (keyword.includes(compactQuery)) score += 20;
+    });
+  }
+
   if (normalizedDesc.includes(query)) score += 15;
+  if (compactQuery && compactDesc.includes(compactQuery)) score += 10;
   return score;
 }
 
@@ -623,24 +674,33 @@ async function initPageShare() {
 }
 
 function cleanIndexHtmlFromUrl() {
-  const currentUrl = new URL(window.location.href);
+  try {
+    if (!window.history || typeof window.history.replaceState !== "function") return;
 
-  if (currentUrl.pathname.endsWith("/index.html")) {
-    currentUrl.pathname = currentUrl.pathname.replace(/index\.html$/, "") || "/";
-    window.history.replaceState(null, "", currentUrl.toString());
+    const currentUrl = new URL(window.location.href);
+
+    // Avoid history rewrites in local file previews where this can fail.
+    if (currentUrl.protocol === "file:") return;
+
+    if (currentUrl.pathname.endsWith("/index.html")) {
+      currentUrl.pathname = currentUrl.pathname.replace(/index\.html$/, "") || "/";
+      window.history.replaceState(null, "", currentUrl.toString());
+    }
+  } catch (error) {
+    // Never block page initialization (theme toggle, nav, search, etc.).
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  cleanIndexHtmlFromUrl();
   updateGreeting();
   initThemeToggle();
+  cleanIndexHtmlFromUrl();
   initMobileMenu();
   initSmoothScrolling();
   initActiveNavLinks();
   initSoftwareSearch();
   initScrollReveal();
   initButtonRipples();
-  wireLatestProQuizRelease();
+  wireLatestReleases();
   initPageShare();
 });
