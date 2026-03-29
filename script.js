@@ -622,7 +622,17 @@ async function initPageShare() {
   });
 }
 
+function cleanIndexHtmlFromUrl() {
+  const currentUrl = new URL(window.location.href);
+
+  if (currentUrl.pathname.endsWith("/index.html")) {
+    currentUrl.pathname = currentUrl.pathname.replace(/index\.html$/, "") || "/";
+    window.history.replaceState(null, "", currentUrl.toString());
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  cleanIndexHtmlFromUrl();
   updateGreeting();
   initThemeToggle();
   initMobileMenu();
