@@ -35,6 +35,7 @@
           </script>
         </head>
         <body>
+          <a class="skip-link" href="#main-content">Skip to main content</a>
           <div class="ambient" aria-hidden="true"></div>
 
           <div class="greeting-strip">
@@ -52,7 +53,7 @@
           <header class="site-header" id="home">
             <div class="container nav-wrap">
               <a class="brand" href="#home" aria-label="KhanDevs home">
-                <span class="brand-mark">KD</span>
+                      <img class="brand-logo" src="khandevs-logo.svg" alt="" aria-hidden="true" />
                 <span class="brand-name">KhanDevs</span>
               </a>
 
@@ -80,9 +81,16 @@
             </div>
           </header>
 
-          <main>
+          <main id="main-content">
             <section class="hero section container" aria-labelledby="hero-title">
               <div class="hero-content">
+                <div class="hero-brand-display" aria-hidden="true">
+                  <img class="hero-brand-logo" src="khandevs-logo.svg" alt="" />
+                  <div class="hero-brand-copy">
+                    <span class="hero-brand-label">KhanDevs</span>
+                    <span class="hero-brand-note">Accessible software solutions</span>
+                  </div>
+                </div>
                 <p class="eyebrow">Accessible Software Solutions</p>
                 <h1 id="hero-title">We build inclusive software that solves real challenges.</h1>
                 <p class="hero-copy">
@@ -137,7 +145,7 @@
                 <h2 id="trending-title">Our Trending Softwares</h2>
               </div>
 
-              <article class="software-card" aria-label="ProQuiz Simulator trending card">
+              <article class="software-card" aria-label="ProQuiz Simulator trending card" data-product-id="proquiz-simulator">
                 <img class="software-logo" src="icon.png" alt="ProQuiz Simulator logo" />
                 <h3>
                   <a href="proquiz-simulator.html">ProQuiz Simulator</a>
@@ -152,23 +160,35 @@
                 <a class="text-link" href="proquiz-simulator.html">Visit ProQuiz Simulator page</a>
               </article>
 
-              <article class="software-card" aria-label="ProTyping Master trending card">
-                <img class="software-logo" src="logo_ptm.png" alt="ProTyping Master logo" />
-                <h3>
-                  <a href="pro-typing-master.html">ProTyping Master</a>
-                </h3>
-                <p>
-                  An accessible typing tutor with instant voice feedback, WPM testing,
-                  and practice tools built for smooth keyboard learning.
-                </p>
-                <p>Developer: Khan Hassan Riaz</p>
-                <p>Designed for: Everyone with a strong focus on accessibility</p>
-                <p>Available for: Windows</p>
-                <a class="text-link" href="pro-typing-master.html">Visit ProTyping Master page</a>
-              </article>
-            </section>
-
-            <section class="section container" id="company" aria-labelledby="company-title">
+              <article class="software-card" aria-label="ProTyping Master trending card" data-product-id="pro-typing-master">
+                  <img class="software-logo" src="logo_ptm.png" alt="ProTyping Master logo" />
+                  <h3>
+                    <a href="pro-typing-master.html">ProTyping Master</a>
+                  </h3>
+                  <p>
+                    An accessible typing tutor with instant voice feedback, WPM testing,
+                    and practice tools built for smooth keyboard learning.
+                  </p>
+                  <p>Developer: Khan Hassan Riaz</p>
+                  <p>Designed for: Everyone with a strong focus on accessibility</p>
+                  <p>Available for: Windows</p>
+                  <a class="text-link" href="pro-typing-master.html">Visit ProTyping Master page</a>
+                </article>
+                <article class="software-card" aria-label="ProTyping Assistant trending card" data-product-id="protyping-assistant">
+                  <img class="software-logo" src="icon_pta.ico" alt="ProTyping Assistant logo" />
+                  <h3>
+                    <a href="protyping-assistant.html">ProTyping Assistant</a>
+                  </h3>
+                  <p>
+                    A background tool specially designed for users who struggle with spelling and typing. Features spell check, quick offline voice typing and shortcodes.
+                  </p>
+                  <p>Developer: Khan Hassan Riaz</p>
+                  <p>Designed for: Everyone with a strong focus on accessibility</p>
+                  <p>Available for: Windows</p>
+                  <a class="text-link" href="protyping-assistant.html">Visit ProTyping Assistant page</a>
+                </article>
+              </section>
+              <section class="section container" id="company" aria-labelledby="company-title">
               <div class="section-heading">
                 <p class="eyebrow">Company</p>
                 <h2 id="company-title">History and journey</h2>
@@ -213,11 +233,10 @@
                 <h3>Our Other Tools</h3>
                 <h4>Pro Typing Assistant</h4>
                 <p>
-                  This software is specially designed for visually impaired users.
-                  It helps detect spelling mistakes, suggests corrections, and
-                  allows quick replacement with the right words. It also supports
-                  fast voice typing and custom dictionaries. Active development is
-                  ongoing, and more features are coming soon.
+                    This software is specially designed for users who struggle with spelling and typing.
+                    It helps detect spelling mistakes, suggests corrections, and
+                    allows quick replacement with the right words. It also supports
+                    fast voice typing and custom dictionaries. This software is fully available for download.
                 </p>
 
                 <h4>Pro Typing Master</h4>
@@ -269,3 +288,5 @@
           <script src="script.js" defer></script>
         </body>
       </html>
+
+

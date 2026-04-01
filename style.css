@@ -149,6 +149,19 @@ body {
   font-weight: 700;
 }
 
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--brand) 18%, transparent);
+}
+
+.brand-name {
+  font-size: 1.03rem;
+  letter-spacing: -0.01em;
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -262,6 +275,51 @@ body {
   gap: var(--space-5);
   align-items: center;
   padding-top: var(--space-7);
+}
+
+.hero-content {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.hero-brand-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: fit-content;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--brand) 20%, var(--line));
+  background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 90%, transparent), var(--surface-soft));
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-brand-logo {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+.hero-brand-copy {
+  display: grid;
+  gap: 0.08rem;
+}
+
+.hero-brand-label {
+  color: var(--brand-strong);
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-brand-note {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .eyebrow {
@@ -994,6 +1052,27 @@ body {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 60;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-180%);
+  transition: transform var(--duration) ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1142,6 +1221,15 @@ select:focus-visible {
 @media (max-width: 767px) {
   .hero-visual {
     display: none;
+  }
+
+  .hero-brand-display {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .hero-brand-logo {
+    width: 52px;
+    height: 52px;
   }
 
   .greeting-inner {

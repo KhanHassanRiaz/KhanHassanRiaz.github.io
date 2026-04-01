@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">KhanDevs logo</title>
+  <desc id="desc">A rounded square emblem with a KD monogram in blue and cyan gradients.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f4aa9" />
+      <stop offset="100%" stop-color="#00a7d1" />
+    </linearGradient>
+    <linearGradient id="glow" x1="18%" y1="18%" x2="82%" y2="82%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect x="28" y="28" width="456" height="456" rx="120" fill="url(#bg)" />
+  <circle cx="160" cy="146" r="88" fill="url(#glow)" />
+  <path d="M130 145h70l53 92 49-92h68l-78 132 82 127h-69l-52-86-51 86h-69l83-129z" fill="#ffffff" opacity="0.96" />
+  <path d="M324 144h30c58 0 94 34 94 89 0 57-37 91-98 91h-26z" fill="#ffffff" opacity="0.92" />
+  <path d="M352 178h3c29 0 47 17 47 47 0 31-18 49-50 49h-5z" fill="#0f4aa9" opacity="0.92" />
+  <circle cx="382" cy="178" r="14" fill="#00a7d1" />
+</svg>

@@ -1,5 +1,6 @@
 const PROQUIZ_DETAILS_PAGE = "proquiz-simulator.html";
 const PRO_TYPING_MASTER_DETAILS_PAGE = "pro-typing-master.html";
+const PRO_TYPING_ASSISTANT_DETAILS_PAGE = "protyping-assistant.html";
 const THEME_STORAGE_KEY = "khandevs-theme";
 const RELEASES_CONFIG = {
   "proquiz-simulator": {
@@ -14,7 +15,12 @@ const RELEASES_CONFIG = {
       "https://api.github.com/repos/KhanHassanRiaz/ProTyping-Master/releases/latest",
     pageUrl: "https://github.com/KhanHassanRiaz/ProTyping-Master/releases/latest",
     fallbackName: "protyping-master-latest",
-  },
+    },
+    "protyping-assistant": {
+      apiUrl: "https://api.github.com/repos/KhanHassanRiaz/ProTyping-Assistant/releases/latest",
+      pageUrl: "https://github.com/KhanHassanRiaz/ProTyping-Assistant/releases/latest",
+      fallbackName: "protyping-assistant-latest",
+    },
 };
 const SOFTWARE_CATALOG = [
   {
@@ -56,9 +62,9 @@ const SOFTWARE_CATALOG = [
       "pro typing",
       "education",
     ],
-    logo: "",
-    url: "",
-    status: "coming-soon",
+    logo: "icon_pta.ico",
+    url: PRO_TYPING_ASSISTANT_DETAILS_PAGE,
+    status: "available",
     featured: false,
   },
   {
@@ -83,6 +89,46 @@ const SOFTWARE_CATALOG = [
     featured: false,
   },
 ];
+
+async function sortTrendingSoftwareByPopularity() {
+  const trendingContainer = document.querySelector("#trending");
+  if (!trendingContainer) return;
+  const cards = Array.from(trendingContainer.querySelectorAll(".software-card[data-product-id]"));
+  if (cards.length === 0) return;
+  const CACHE_KEY = "khandevs-trending-counts";
+  let cache = {};
+  try {
+    cache = JSON.parse(sessionStorage.getItem(CACHE_KEY)) || {};
+  } catch (e) {}
+  const getDownloadCount = async (productId) => {
+    if (cache[productId] !== undefined) return cache[productId];
+    const config = RELEASES_CONFIG[productId];
+    if (!config || !config.apiUrl) return 0;
+    try {
+      const resp = await fetch(config.apiUrl, { headers: { Accept: "application/vnd.github+json" } });
+      if (!resp.ok) return 0;
+      const data = await resp.json();
+      if (!data.assets || !Array.isArray(data.assets)) return 0;
+      const count = data.assets.reduce((sum, asset) => sum + (asset.download_count || 0), 0);
+      cache[productId] = count;
+      return count;
+    } catch {
+      return 0;
+    }
+  };
+  const results = await Promise.all(
+    cards.map(async (card) => {
+      const pid = card.getAttribute("data-product-id");
+      const count = await getDownloadCount(pid);
+      return { card, count };
+    })
+  );
+  try {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+  } catch (e) {}
+  results.sort((a, b) => b.count - a.count);
+  results.forEach(res => trendingContainer.appendChild(res.card));
+}
 
 function updateGreeting() {
   const greetingEl = document.getElementById("greeting-text");
@@ -703,4 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initButtonRipples();
   wireLatestReleases();
   initPageShare();
+    sortTrendingSoftwareByPopularity();
 });
+
+

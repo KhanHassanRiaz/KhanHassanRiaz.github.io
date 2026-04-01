@@ -1,0 +1,108 @@
+ENGLISH INSTRUCTIONS
+
+INTRODUCTION
+If you struggle with spelling or want fast and accurate English typing, ProTyping Assistant is the perfect solution for you. 
+This tool runs silently in the background and helps you type faster using smart suggestions, offline voice typing, and custom shortcuts.
+
+GETTING STARTED
+After installing the ProTyping Assistant, it will automatically run in the background. A Settings window will appear where you can enable the assistant, set it to start with Windows, and find the instructions.
+
+Note that you can only run one instance of this program at a time. If you try to open it again, a warning message will appear.
+
+HOW TO USE THE FEATURES
+
+1. Word Suggestions (Alt + F8)
+Type a word in any text editor or edit box. If you think the spelling is wrong, select the word using Ctrl + Shift + Left Arrow.
+
+Press Alt + F8 to open a window named ProTyping Assistant with a list of suggestions. Use your Up and Down arrow keys to navigate the list, and press Enter on the correct word.
+
+Your focus will automatically return to your editor, and the correct word will replace the misspelled one.
+
+2. Voice Typing (Alt + F9)
+Press Alt + F9 to activate voice typing. You will hear a high-pitch beep indicating it is ready to listen.
+
+Start speaking in English to see incredibly fast and accurate offline typing. When you are done speaking, press Alt + F9 again.
+
+You will hear a low-pitch beep confirming that voice typing has stopped.
+
+3. Setting Up the Custom Dictionary
+If you frequently type long words like Pakistan or ProQuiz Simulator, you can set up a short code. 
+Go to the Documents folder on your computer, find the ProTyping Assistant folder, and open the custom_dictionary.txt file in Notepad.
+
+Type a short code of 2 or 3 letters, add a colon right after it, followed by a space, and then type the full word. 
+Example 1: PK: Pakistan.
+Example 2: PQS: ProQuiz Simulator. 
+After typing the last letter of your word, press Enter to move to a new blank line, then save and close the file.
+
+4. Word Expansion (Alt + F10)
+Now that your custom dictionary is ready, type your short code in any editor. Select the short code using Ctrl + Shift + Left Arrow and press Alt + F10.
+
+The program will instantly replace your short code with the full word.
+
+5. Pause and Resume (Alt + F11)
+Press Alt + F11 whenever you want to pause the program. Press it again to resume.
+
+The program will speak its status so you know exactly what mode it is in.
+
+6. Exit the Program (Alt + F12)
+Press Alt + F12 to completely close the program. You can start it again from your desktop shortcut or start menu.
+
+7. Settings Dialog (Alt + F7)
+Press Alt + F7 anytime to open the settings dialog. Here you can enable or disable the assistant, set it to start with Windows, and open this instructions file.
+
+Happy Typing!
+
+
+ROMAN URDU INSTRUCTIONS
+
+INTRODUCTION
+Agar aap ki spelling weak hai ya aap fast aur accurate English typing karna chahtay hain, toh ProTyping Assistant aap k liye aik behtareen solution hai. Yeh tool background main chup kar chalta hai aur smart suggestions, offline voice typing, aur custom shortcuts k zariye aap ki typing speed barhata hai.
+
+GETTING STARTED
+ProTyping Assistant install karnay k baad, yeh automatically background main chalna shuru ho jayega. Screen par aik Settings dialog open hoga jahan say aap autostart on kar saktay hain, program ko enable kar saktay hain aur instructions access kar saktay hain.
+
+Yaad rakhain k aik waqt main is program ki sirf aik hi copy chal sakti hai. Agar aap isay dobara open karnay ki koshish karaingay toh screen par aik warning message aayega.
+
+HOW TO USE THE FEATURES
+
+1. Word Suggestions (Alt + F8)
+Kisi bhi text editor ya edit box main apna word type karain. Agar aap ko lagay k spelling ghalat hai, toh us word ko Ctrl + Shift + Left Arrow say select kar lain.
+
+Phir Alt + F8 press karain jis say ProTyping Assistant k naam say aik window open hogi. Up aur Down arrow keys use kar k list main navigate karain aur sahi word par Enter press karain.
+
+Aap ka focus automatically wapas aap k editor main aa jayega aur ghalat word ki jagah sahi word replace ho jayega.
+
+2. Voice Typing (Alt + F9)
+Voice typing start karnay k liye Alt + F9 press karain. Aap ko aik high pitch beep sunai degi jis ka matlab hai k mic on ho gaya hai.
+
+Ab aap English main bolna start karain taakay fast aur accurate offline typing ho sakay. Jab aap bol chukain, toh dobara Alt + F9 press karain.
+
+Aik low pitch beep aayegi jo confirm karegi k voice typing stop ho gayi hai.
+
+3. Setting Up the Custom Dictionary
+Agar aap Pakistan ya ProQuiz Simulator jaisay words baar baar use kartay hain, toh aap un ka aik short code bana saktay hain.
+Apnay computer k Documents folder main jayain, wahan ProTyping Assistant ka folder open karain, aur custom_dictionary.txt file ko Notepad main open karain.
+
+Koi 2 ya 3 letters ka short code type karain, us k foran baad colon lagayain, aik space dain, aur phir apna mukammal word type karain.
+ Misaal 1: PK: Pakistan.
+
+Misaal 2: PQS: ProQuiz Simulator. 
+Apnay word ka aakhri letter type karnay k baad Enter press kar k line break kar dain aur file ko save kar k close kar dain.
+
+4. Word Expansion (Alt + F10)
+Ab aap ki custom dictionary ready hai. Kisi bhi editor main apna short code type karain aur usay Ctrl + Shift + Left Arrow say select karain.
+
+Phir Alt + F10 press karain jis say yeh program foran aap k short code ko mukammal word say replace kar dega.
+
+5. Pause and Resume (Alt + F11)
+Jab bhi aap program ko rokna chahain, Alt + F11 press kar k pause kar saktay hain. Dobara chalane k liye phir say yahi shortcut press karain.
+
+Program bol kar apna status batayega taakay aap ko pata chal jaye k woh kis mode main hai.
+
+6. Exit the Program (Alt + F12)
+Program ko mukammal tor par close karnay k liye Alt + F12 press karain. Aap isay desktop shortcut ya start menu say dobara chala saktay hain.
+
+7. Settings Dialog (Alt + F7)
+Kisi bhi waqt Alt + F7 press kar k aap settings dialog open kar saktay hain. Yahan say aap assistant ko enable ya disable kar saktay hain, Windows k sath start honay ki setting change kar saktay hain, aur instructions file open kar saktay hain.
+
+Happy Typing!
