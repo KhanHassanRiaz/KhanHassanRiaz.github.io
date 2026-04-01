@@ -679,10 +679,24 @@ async function initPageShare() {
   const feedback = document.querySelector("[data-share-feedback]");
   if (!shareButton) return;
 
+  const getPrettyPageUrl = () => {
+    const currentUrl = new URL(window.location.href);
+
+    if (currentUrl.protocol === "file:") {
+      return currentUrl.toString();
+    }
+
+    if (currentUrl.pathname.endsWith(".html")) {
+      currentUrl.pathname = currentUrl.pathname.replace(/\.html$/, "");
+    }
+
+    return currentUrl.toString();
+  };
+
   const getSharePayload = () => ({
     title: document.title,
     text: "Check out ProQuiz Simulator for accessible exam preparation.",
-    url: window.location.href,
+    url: getPrettyPageUrl(),
   });
 
   const setFeedback = (message, isError = false) => {
@@ -719,7 +733,7 @@ async function initPageShare() {
   });
 }
 
-function cleanIndexHtmlFromUrl() {
+function cleanHtmlExtensionFromUrl() {
   try {
     if (!window.history || typeof window.history.replaceState !== "function") return;
 
@@ -728,8 +742,8 @@ function cleanIndexHtmlFromUrl() {
     // Avoid history rewrites in local file previews where this can fail.
     if (currentUrl.protocol === "file:") return;
 
-    if (currentUrl.pathname.endsWith("/index.html")) {
-      currentUrl.pathname = currentUrl.pathname.replace(/index\.html$/, "") || "/";
+    if (currentUrl.pathname.endsWith(".html")) {
+      currentUrl.pathname = currentUrl.pathname.replace(/\.html$/, "") || "/";
       window.history.replaceState(null, "", currentUrl.toString());
     }
   } catch (error) {
@@ -740,7 +754,7 @@ function cleanIndexHtmlFromUrl() {
 document.addEventListener("DOMContentLoaded", () => {
   updateGreeting();
   initThemeToggle();
-  cleanIndexHtmlFromUrl();
+  cleanHtmlExtensionFromUrl();
   initMobileMenu();
   initSmoothScrolling();
   initActiveNavLinks();
