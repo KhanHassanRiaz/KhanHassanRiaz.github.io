@@ -21,6 +21,11 @@ const RELEASES_CONFIG = {
       pageUrl: "https://github.com/KhanHassanRiaz/ProTyping-Assistant/releases/latest",
       fallbackName: "protyping-assistant-latest",
     },
+    "synonyms-antonyms": {
+      apiUrl: "https://api.github.com/repos/Merry-ai/nvda-thesaurus/releases/latest",
+      pageUrl: "https://github.com/Merry-ai/nvda-thesaurus/releases/latest",
+      fallbackName: "nvda-thesaurus-latest",
+    },
 };
 const SOFTWARE_CATALOG = [
   {
@@ -87,6 +92,26 @@ const SOFTWARE_CATALOG = [
     url: PRO_TYPING_MASTER_DETAILS_PAGE,
     status: "available",
     featured: false,
+  },
+  {
+    id: "synonyms-antonyms",
+    name: "Synonyms and Antonyms",
+    description:
+      "An all-in-one vocabulary lookup tool tailored for blind and visually impaired individuals.",
+    categories: ["windows"],
+    keywords: [
+      "synonyms",
+      "antonyms",
+      "nvda",
+      "add-on",
+      "vocabulary",
+      "accessibility",
+      "dictionary",
+    ],
+    logo: "",
+    url: "synonyms-and-antonyms.html",
+    status: "available",
+    featured: true,
   },
 ];
 
